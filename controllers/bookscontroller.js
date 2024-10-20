@@ -4,6 +4,7 @@ const asyncHandler = require("express-async-handler");
 
 const getAllBooks = asyncHandler(async (req, res) => {
     const books = await db.queryAllBooks();
+    console.log(books[0].img_url);
     
     if (!books) {
         throw "Not found";

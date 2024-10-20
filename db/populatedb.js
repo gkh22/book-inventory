@@ -6,12 +6,20 @@ const SQL = `
 -- Drop tables if they exist
 DROP TABLE IF EXISTS books CASCADE;
 DROP TABLE IF EXISTS authors CASCADE;
+DROP TABLE IF EXISTS genres CASCADE;
+DROP TABLE IF EXISTS book_genres CASCADE;
 
 -- Create authors table
 CREATE TABLE authors (
     author_id SERIAL PRIMARY KEY,
     name VARCHAR (255) NOT NULL,
     bio TEXT
+);
+
+-- Create genres table
+CREATE TABLE genres (
+    genre_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
 );
 
 -- Create books table
@@ -24,14 +32,34 @@ CREATE TABLE books (
     FOREIGN KEY (author_id) REFERENCES authors(author_id) ON DELETE CASCADE
 );
 
-INSERT INTO authors (author_id, name, bio) VALUES
-    (1, 'Han Kang', 'Nobel prize winner.')
+-- Junction table for books and genres
+CREATE TABLE book_genres (
+    book_id INT REFERENCES books(book_id) ON DELETE CASCADE,
+    genre_id INT REFERENCES genres(genre_id) ON DELETE CASCADE,
+    PRIMARY KEY (book_id, genre_id)
+);
+
+INSERT INTO authors (name, bio) VALUES
+    ('Han Kang', 'Nobel prize winner.')
 ON CONFLICT (author_id) DO NOTHING;
 
-INSERT INTO books (book_id, title, author_id, img_url, stock_quantity) VALUES
-    (1, 'The Vegetarian', 1, 'https://images.freeimages.com/variants/WQRKu3qc1ypRXfwwxkPdffh4/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d?fmt=webp&h=350',
-    5)
+INSERT INTO books (title, author_id, img_url, stock_quantity) VALUES
+    ('The Vegetarian', 1, '/images/TheVegetarian.png', 5),
+    ('Human Acts', 1, '/images/HumanActs.jpg', 8),
+    ('작별하지 않는다', 1, '/images/FareWell.png', 8),
+    ('흰', 1, '/images/hau.jpg', 8),
+    ('Greek Lessons', 1, '/images/greek.jpg', 8),
+    ('The Wind Is Blowing', 1, '/images/thewind.jpg', 10)
 ON CONFLICT (book_id) DO NOTHING;
+
+
+INSERT INTO genres (name) VALUES
+    ('Fiction'), ('Non-fiction'), ('Asian culture'), ('Literary Fiction'),
+    ('Fantasy')
+ON CONFLICT (genre_id) DO NOTHING;
+
+INSERT INTO book_genres VALUES 
+    (1, 3), (1, 4);
 
 `
 

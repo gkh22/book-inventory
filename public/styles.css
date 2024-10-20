@@ -1,5 +1,52 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
+}
+
+@font-face {
+    src: url("./fonts/ShineTypewriter.ttf");
+    font-family: Typewriter;
+    font-size: normal;
+    font-weight: normal;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    font-family: Typewriter, sans-serif;
+}
+
+#image-track {
+    display: flex;
+    position: absolute;
+    gap: 3vmin;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#image-track > .image {
+    width: 30vmin;
+    height: 44vmin;
+    object-fit: cover;
+    object-position: 100% center;
+}
+
+.navbar {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    
     
 }
