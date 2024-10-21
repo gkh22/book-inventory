@@ -12,9 +12,14 @@
     <%- include('navbar') %>
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
         <% books.forEach(book => { %>
-            <img src="<%=book.img_url%>" alt="placeholder" class="image" draggable="false">
+            <a href="/books/<%=book.book_id%>">
+                <img src="<%=book.img_url%>" alt="placeholder" class="image" draggable="false">
+            </a>
         <% }) %>
+        <a href="/books/add"><img src="/images/plus-svgrepo-com.svg" class="plus" draggable="false"></a>
     </div>
-    <script src="/scripts.js" defer></script>
+    <%- include('footer') %>
+    <script src="/scripts/index.js" defer></script>
+    <script src="/scripts/book.js" defer></script>
 </body>
 </html>

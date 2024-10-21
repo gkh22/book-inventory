@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    src: url("./fonts/ShineTypewriter.ttf");
-    font-family: Typewriter;
+    src: url("./fonts/SFPRODISPLAYREGULAR.OTF");
+    font-family: SF;
     font-size: normal;
     font-weight: normal;
 }
@@ -15,7 +15,7 @@ body {
     height: 100vh;
     background-color: black;
     overflow: hidden;
-    font-family: Typewriter, sans-serif;
+    font-family: SF, sans-serif;
 }
 
 #image-track {
@@ -25,18 +25,21 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(0%, -50%);
+    display: flex;
+    align-items: center;
 }
 
-#image-track > .image {
-    width: 30vmin;
-    height: 44vmin;
-    object-fit: cover;
+#image-track > a > .image {
+    width: 40vmin;
+    height: 54vmin;
+    object-fit: contain;
     object-position: 100% center;
+    cursor: pointer;
 }
 
 .navbar {
     color: white;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -44,9 +47,64 @@ body {
     align-items: center;
 }
 
+.links {
+    display: flex;
+    gap: 3vmin;
+    padding: 2vmin;
+}
+
+.unselected {
+    opacity: 70%;
+}
+
+.selected {
+    opacity: 100%;
+}
+
 a {
     text-decoration: none;
     color: white;
-    
-    
+
+}
+
+.solo_img {
+    width: 30vmin;
+    height: 40vmin;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    color: white;
+    margin: 15px;
+}
+
+.description {
+    max-width: 450px;
+}
+
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0; left: 0;
+    color: white;
+    padding: 1vmin;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.github {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.plus {
+    width: 50px;
+    height: 50px;
 }
