@@ -17,7 +17,6 @@ const getAllBooks = asyncHandler(async (req, res) => {
 
 const getBook = asyncHandler(async (req, res) => {
     const book = await db.queryBook(req.params.bookId);
-    console.log(book);
     if (!book) {
         throw "Not found";
     }

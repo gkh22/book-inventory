@@ -5,10 +5,21 @@ async function queryAllBooks() {
     return books.rows;
 }
 
+async function queryAllAuthors() {
+    const authors = await pool.query("SELECT * FROM authors");
+    return authors.rows;
+}
+
 async function queryBook(id) {
     const book = await pool.query(`SELECT * FROM books WHERE book_id = ${id}`);
     
     return book.rows[0];
+}
+
+async function queryAuthor(id) {
+    const author = await pool.query(`SELECT * FROM authors WHERE author_id = ${id}`);
+
+    return author.rows[0];
 }
 
 async function insertBook(id, title, author_id, image_url, description) {
@@ -22,6 +33,7 @@ async function removeBook(id) {
 
 module.exports = {
     queryAllBooks,
+    queryAllAuthors,
     queryBook,
     insertBook,
     removeBook
