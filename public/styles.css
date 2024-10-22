@@ -27,6 +27,7 @@ body {
     transform: translate(0%, -50%);
     display: flex;
     align-items: center;
+ 
 }
 
 #image-track > a > .image {
@@ -35,7 +36,10 @@ body {
     object-fit: contain;
     object-position: 100% center;
     cursor: pointer;
+    min-width: 100px;
+    min-height: 200px;
 }
+
 
 .navbar {
     color: white;
@@ -45,6 +49,7 @@ body {
     justify-content: center;
     padding: 15px;
     align-items: center;
+    margin: 5px;
 }
 
 .links {
@@ -68,9 +73,12 @@ a {
 }
 
 .solo_img {
-    width: 30vmin;
+    width: auto;
     height: 40vmin;
+    min-width: 100px;
+    min-height: 200px;
 }
+
 
 .content {
     display: flex;
@@ -78,7 +86,8 @@ a {
     justify-content: center;
     gap: 24px;
     color: white;
-    margin: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .description {
@@ -96,6 +105,7 @@ a {
     gap: 16px;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 }
 
 .github {
@@ -108,3 +118,38 @@ a {
     width: 50px;
     height: 50px;
 }
+
+.author_image {
+    border: 1px white solid;
+    border-radius: 3%;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+   
+    width: 300px;
+    gap: 24px;
+}
+
+.author_form, .book_form {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.input {
+    width: 100vmin;
+    height: 20px;
+}
+
+.submit {
+    padding: 5px;
+    
+}
+

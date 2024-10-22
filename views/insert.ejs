@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="content">
+        <form action="/insert" method="POST" class="form">
+            <div class="author_form">
+    
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="input" required><br>
+                <label for="bio">Bio:</label>
+                <input type="text" id="bio" name="bio" class="input" required><br>
+                <label for="author_img">Author's Image:</label>
+                <input type="text" id="author_img" name="author_img_url" class="input" required><br>
+            </div>
+
+            <div class="book_form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" class="input" required><br>
+                <label for="img_url">Book cover:</label>
+                <input type="text" id="img_url" name="img_url" class="input" required><br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" class="input" required><br>
+            </div>
+
+            <input class="submit" type="submit" value="Add Entry">
+        </form>
+    </div>
+    <%- include('footer') %>
+</body>
+</html>

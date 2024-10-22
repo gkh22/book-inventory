@@ -13,7 +13,8 @@ DROP TABLE IF EXISTS book_genres CASCADE;
 CREATE TABLE authors (
     author_id SERIAL PRIMARY KEY,
     name VARCHAR (255) NOT NULL,
-    bio TEXT NOT NULL
+    bio TEXT NOT NULL,
+    img_url VARCHAR(255) NOT NULL
 );
 
 -- Create genres table
@@ -39,8 +40,11 @@ CREATE TABLE book_genres (
     PRIMARY KEY (book_id, genre_id)
 );
 
-INSERT INTO authors (name, bio) VALUES
-    ('Han Kang', 'Nobel prize winner.')
+INSERT INTO authors (name, bio, img_url) VALUES
+    ('Han Kang', 'Han Kang is the first South Korean writer and the first female
+    Asian writer to be awarded the Nobel Prize in Literature. She was awarded for
+    "her intense poetic prose that confronts historical traumas and exposes the fragility
+    of human life.', '/images/hankang.png')
 ON CONFLICT (author_id) DO NOTHING;
 
 INSERT INTO books (title, author_id, img_url, description) VALUES

@@ -9,7 +9,15 @@
 <body>
     <%- include('navbar') %>
     <div class="authors">
-        
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+            <% authors.forEach(author => { %>
+                <a href="/authors/<%=author.author_id%>">
+                    <img src="<%=author.img_url%>" alt="placeholder" class="image"  draggable="false">
+                </a>
+            <% }) %>
+        </div>
     </div>
+    <%- include('footer') %>
+    <script src="/scripts/index.js" defer></script>
 </body>
 </html>

@@ -85,5 +85,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setImages();
 });
 
-console.log(`${window.location.pathname}`);
+
 
