@@ -44,7 +44,7 @@ INSERT INTO authors (name, bio, img_url) VALUES
     ('Han Kang', 'Han Kang is the first South Korean writer and the first female
     Asian writer to be awarded the Nobel Prize in Literature. She was awarded for
     "her intense poetic prose that confronts historical traumas and exposes the fragility
-    of human life.', '/images/hankang.png')
+    of human life."', '/images/hankang.png')
 ON CONFLICT (author_id) DO NOTHING;
 
 INSERT INTO books (title, author_id, img_url, description) VALUES

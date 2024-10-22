@@ -10,7 +10,12 @@
     <div class="container">
         <%- include('navbar') %>
         <div class="content">
-            <div><img src="<%=author.img_url%>" class="author_image solo_img"></div>
+            <div class="image-box">
+                <img src="<%=author.img_url%>" class="author_image solo_img">
+                <form action="/remove/authors/<%=author.author_id%>" method="POST">
+                    <button type="submit" class="remove_button">Remove</button>
+                </form>
+            </div>
             <div class="description">
                 <%=author.bio%>
             </div>

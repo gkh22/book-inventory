@@ -9,7 +9,14 @@
 <body>
     <%- include('navbar') %>
     <div class="content">
-        <div class="logo"><img src="<%=book.img_url%>" class="solo_img"></div>
+        <div class="image-box">
+            <img src="<%=book.img_url%>" class="solo_img">
+            <div>
+                <form action="/remove/books/<%=book.book_id%>" method="POST">
+                    <button type="submit" class="remove_button">Remove</button>
+                </form>
+            </div>
+        </div>
         <div class="description">
             <%=book.description%>
         </div>

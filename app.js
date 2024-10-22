@@ -9,6 +9,7 @@ const indexRouter = require("./routes/index.js");
 const booksRouter = require("./routes/books.js");
 const authorsRouter = require("./routes/authors.js");
 const insertRouter = require("./routes/insert.js");
+const removeRouter = require("./routes/remove.js");
 
 app.use(express.static(assetsPath));
 app.use(express.urlencoded( { extended: true }));
@@ -19,6 +20,7 @@ app.use("/", indexRouter);
 app.use("/books", booksRouter);
 app.use("/authors", authorsRouter);
 app.use("/insert", insertRouter);
+app.use("/remove", removeRouter);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);

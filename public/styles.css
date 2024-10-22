@@ -124,10 +124,12 @@ a {
     border-radius: 3%;
 }
 
-.content {
+.image-box {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
+    gap: 16px
 }
 
 .form {
@@ -150,6 +152,11 @@ a {
 
 .submit {
     padding: 5px;
-    
+}
+
+.remove_button {
+    padding: 10px;
+    border-radius: 10px;
+    font-family: SF;
 }
 

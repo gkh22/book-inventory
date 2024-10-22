@@ -33,9 +33,12 @@ async function insertAuthor(name, bio, img_url) {
 }
 
 async function removeBook(id) {
-    await pool.query(`DELETE FROM books WHERE book_id = ${id}`);
+    await pool.query("DELETE FROM books WHERE book_id = $1", [id]);
 }
 
+async function removeAuthor(id) {
+    await pool.query("DELETE FROM authors WHERE author_id = $1", [id]);
+}
 module.exports = {
     queryAllBooks,
     queryAllAuthors,
@@ -43,5 +46,6 @@ module.exports = {
     queryAuthor,
     insertBook,
     insertAuthor,
-    removeBook
+    removeBook,
+    removeAuthor
 };
