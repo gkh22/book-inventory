@@ -1,4 +1,4 @@
-![Alt text](/appex.png)
+![Alt text](/demo.gif)
 # Book Inventory
 A CRUD Book Inventory Application that uses ExpressJS on the backend, PostgreSQL as a database, and vanilla JS + CSS to style.
 
